@@ -1,0 +1,163 @@
+Brand | Segment | Generation/Series | Family | Model | Year | Cores/Threads | P+E | Max Turbo (GHz) | Recommended
+Intel | Desktop | 9th Gen (Coffee Lake Refresh) | Core i9 | i9-9900KS | 2019 | 8C/16T | P:8 E:0 | 5.0 | 7
+Intel | Desktop | 9th Gen (Coffee Lake Refresh) | Core i9 | i9-9900K | 2019 | 8C/16T | P:8 E:0 | 5.0 | 7
+Intel | Desktop | 9th Gen (Coffee Lake Refresh) | Core i9 | i9-9900KF | 2019 | 8C/16T | P:8 E:0 | 5.0 | 7
+Intel | Desktop | 9th Gen (Coffee Lake Refresh) | Core i7 | i7-9700K | 2019 | 8C/8T | P:8 E:0 | 4.9 | 7
+Intel | Desktop | 9th Gen (Coffee Lake Refresh) | Core i7 | i7-9700KF | 2019 | 8C/8T | P:8 E:0 | 4.9 | 7
+Intel | Desktop | 9th Gen (Coffee Lake Refresh) | Core i5 | i5-9600K | 2019 | 6C/6T | P:6 E:0 | 4.6 | 5
+Intel | Desktop | 9th Gen (Coffee Lake Refresh) | Core i5 | i5-9600KF | 2019 | 6C/6T | P:6 E:0 | 4.6 | 5
+Intel | Desktop | 9th Gen (Coffee Lake Refresh) | Core i5 | i5-9400 | 2019 | 6C/6T | P:6 E:0 | 4.1 | 5
+Intel | Desktop | 9th Gen (Coffee Lake Refresh) | Core i5 | i5-9400F | 2019 | 6C/6T | P:6 E:0 | 4.1 | 5
+Intel | Desktop | 10th Gen (Comet Lake) | Core i9 | i9-10900K | 2020 | 10C/20T | P:10 E:0 | 5.3 | 7
+Intel | Desktop | 10th Gen (Comet Lake) | Core i9 | i9-10900KF | 2020 | 10C/20T | P:10 E:0 | 5.3 | 7
+Intel | Desktop | 10th Gen (Comet Lake) | Core i9 | i9-10900 | 2020 | 10C/20T | P:10 E:0 | 5.2 | 7
+Intel | Desktop | 10th Gen (Comet Lake) | Core i7 | i7-10700K | 2020 | 8C/16T | P:8 E:0 | 5.1 | 7
+Intel | Desktop | 10th Gen (Comet Lake) | Core i7 | i7-10700KF | 2020 | 8C/16T | P:8 E:0 | 5.1 | 7
+Intel | Desktop | 10th Gen (Comet Lake) | Core i7 | i7-10700 | 2020 | 8C/16T | P:8 E:0 | 4.8 | 7
+Intel | Desktop | 10th Gen (Comet Lake) | Core i5 | i5-10600K | 2020 | 6C/12T | P:6 E:0 | 4.8 | 5
+Intel | Desktop | 10th Gen (Comet Lake) | Core i5 | i5-10600KF | 2020 | 6C/12T | P:6 E:0 | 4.8 | 5
+Intel | Desktop | 10th Gen (Comet Lake) | Core i5 | i5-10600 | 2020 | 6C/12T | P:6 E:0 | 4.8 | 5
+Intel | Desktop | 10th Gen (Comet Lake) | Core i5 | i5-10400 | 2020 | 6C/12T | P:6 E:0 | 4.3 | 5
+Intel | Desktop | 10th Gen (Comet Lake) | Core i5 | i5-10400F | 2020 | 6C/12T | P:6 E:0 | 4.3 | 5
+Intel | Desktop | 10th Gen (Comet Lake) | Core i3 | i3-10100 | 2020 | 4C/8T | P:4 E:0 | 4.3 | 3
+Intel | Desktop | 10th Gen (Comet Lake) | Core i3 | i3-10100F | 2020 | 4C/8T | P:4 E:0 | 4.3 | 3
+Intel | Desktop | 11th Gen (Rocket Lake) | Core i9 | i9-11900K | 2021 | 8C/16T | P:8 E:0 | 5.3 | 7
+Intel | Desktop | 11th Gen (Rocket Lake) | Core i9 | i9-11900KF | 2021 | 8C/16T | P:8 E:0 | 5.3 | 7
+Intel | Desktop | 11th Gen (Rocket Lake) | Core i9 | i9-11900 | 2021 | 8C/16T | P:8 E:0 | 5.2 | 7
+Intel | Desktop | 11th Gen (Rocket Lake) | Core i7 | i7-11700K | 2021 | 8C/16T | P:8 E:0 | 5.0 | 7
+Intel | Desktop | 11th Gen (Rocket Lake) | Core i7 | i7-11700KF | 2021 | 8C/16T | P:8 E:0 | 5.0 | 7
+Intel | Desktop | 11th Gen (Rocket Lake) | Core i7 | i7-11700 | 2021 | 8C/16T | P:8 E:0 | 4.9 | 7
+Intel | Desktop | 11th Gen (Rocket Lake) | Core i5 | i5-11600K | 2021 | 6C/12T | P:6 E:0 | 4.9 | 5
+Intel | Desktop | 11th Gen (Rocket Lake) | Core i5 | i5-11600KF | 2021 | 6C/12T | P:6 E:0 | 4.9 | 5
+Intel | Desktop | 11th Gen (Rocket Lake) | Core i5 | i5-11500 | 2021 | 6C/12T | P:6 E:0 | 4.6 | 5
+Intel | Desktop | 11th Gen (Rocket Lake) | Core i5 | i5-11400 | 2021 | 6C/12T | P:6 E:0 | 4.4 | 5
+Intel | Desktop | 11th Gen (Rocket Lake) | Core i5 | i5-11400F | 2021 | 6C/12T | P:6 E:0 | 4.4 | 5
+Intel | Desktop | 12th Gen (Alder Lake) | Core i9 | i9-12900KS | 2022 | 16C/24T | P:8 E:8 | 5.5 | 7
+Intel | Desktop | 12th Gen (Alder Lake) | Core i9 | i9-12900K | 2021 | 16C/24T | P:8 E:8 | 5.2 | 7
+Intel | Desktop | 12th Gen (Alder Lake) | Core i9 | i9-12900KF | 2021 | 16C/24T | P:8 E:8 | 5.2 | 7
+Intel | Desktop | 12th Gen (Alder Lake) | Core i9 | i9-12900 | 2021 | 16C/24T | P:8 E:8 | 5.1 | 7
+Intel | Desktop | 12th Gen (Alder Lake) | Core i7 | i7-12700K | 2021 | 12C/20T | P:8 E:4 | 5.0 | 7
+Intel | Desktop | 12th Gen (Alder Lake) | Core i7 | i7-12700KF | 2021 | 12C/20T | P:8 E:4 | 5.0 | 7
+Intel | Desktop | 12th Gen (Alder Lake) | Core i7 | i7-12700 | 2021 | 12C/20T | P:8 E:4 | 4.9 | 7
+Intel | Desktop | 12th Gen (Alder Lake) | Core i5 | i5-12600K | 2021 | 10C/16T | P:6 E:4 | 4.9 | 5
+Intel | Desktop | 12th Gen (Alder Lake) | Core i5 | i5-12600KF | 2021 | 10C/16T | P:6 E:4 | 4.9 | 5
+Intel | Desktop | 12th Gen (Alder Lake) | Core i5 | i5-12600 | 2021 | 6C/12T | P:6 E:0 | 4.8 | 5
+Intel | Desktop | 12th Gen (Alder Lake) | Core i5 | i5-12400 | 2022 | 6C/12T | P:6 E:0 | 4.4 | 5
+Intel | Desktop | 12th Gen (Alder Lake) | Core i5 | i5-12400F | 2022 | 6C/12T | P:6 E:0 | 4.4 | 5
+Intel | Desktop | 12th Gen (Alder Lake) | Core i3 | i3-12100 | 2022 | 4C/8T | P:4 E:0 | 4.3 | 3
+Intel | Desktop | 12th Gen (Alder Lake) | Core i3 | i3-12100F | 2022 | 4C/8T | P:4 E:0 | 4.3 | 3
+Intel | Desktop | 13th Gen (Raptor Lake) | Core i9 | i9-13900KS | 2023 | 24C/32T | P:8 E:16 | 6.0 | 7
+Intel | Desktop | 13th Gen (Raptor Lake) | Core i9 | i9-13900K | 2022 | 24C/32T | P:8 E:16 | 5.8 | 7
+Intel | Desktop | 13th Gen (Raptor Lake) | Core i9 | i9-13900KF | 2022 | 24C/32T | P:8 E:16 | 5.8 | 7
+Intel | Desktop | 13th Gen (Raptor Lake) | Core i9 | i9-13900 | 2023 | 24C/32T | P:8 E:16 | 5.6 | 7
+Intel | Desktop | 13th Gen (Raptor Lake) | Core i7 | i7-13700K | 2022 | 16C/24T | P:8 E:8 | 5.4 | 7
+Intel | Desktop | 13th Gen (Raptor Lake) | Core i7 | i7-13700KF | 2022 | 16C/24T | P:8 E:8 | 5.4 | 7
+Intel | Desktop | 13th Gen (Raptor Lake) | Core i7 | i7-13700 | 2023 | 16C/24T | P:8 E:8 | 5.2 | 7
+Intel | Desktop | 13th Gen (Raptor Lake) | Core i5 | i5-13600K | 2022 | 14C/20T | P:6 E:8 | 5.1 | 5
+Intel | Desktop | 13th Gen (Raptor Lake) | Core i5 | i5-13600KF | 2022 | 14C/20T | P:6 E:8 | 5.1 | 5
+Intel | Desktop | 13th Gen (Raptor Lake) | Core i5 | i5-13500 | 2023 | 14C/20T | P:6 E:8 | 4.8 | 5
+Intel | Desktop | 13th Gen (Raptor Lake) | Core i5 | i5-13400 | 2023 | 10C/16T | P:6 E:4 | 4.6 | 5
+Intel | Desktop | 13th Gen (Raptor Lake) | Core i5 | i5-13400F | 2023 | 10C/16T | P:6 E:4 | 4.6 | 5
+Intel | Desktop | 13th Gen (Raptor Lake) | Core i3 | i3-13100 | 2023 | 4C/8T | P:4 E:0 | 4.5 | 3
+Intel | Desktop | 13th Gen (Raptor Lake) | Core i3 | i3-13100F | 2023 | 4C/8T | P:4 E:0 | 4.5 | 3
+Intel | Desktop | 14th Gen (Raptor Lake Refresh) | Core i9 | i9-14900KS | 2024 | 24C/32T | P:8 E:16 | 6.2 | 7
+Intel | Desktop | 14th Gen (Raptor Lake Refresh) | Core i9 | i9-14900K | 2023 | 24C/32T | P:8 E:16 | 6.0 | 7
+Intel | Desktop | 14th Gen (Raptor Lake Refresh) | Core i9 | i9-14900KF | 2023 | 24C/32T | P:8 E:16 | 6.0 | 7
+Intel | Desktop | 14th Gen (Raptor Lake Refresh) | Core i9 | i9-14900 | 2024 | 24C/32T | P:8 E:16 | 5.8 | 7
+Intel | Desktop | 14th Gen (Raptor Lake Refresh) | Core i7 | i7-14700K | 2023 | 20C/28T | P:8 E:12 | 5.6 | 7
+Intel | Desktop | 14th Gen (Raptor Lake Refresh) | Core i7 | i7-14700KF | 2023 | 20C/28T | P:8 E:12 | 5.6 | 7
+Intel | Desktop | 14th Gen (Raptor Lake Refresh) | Core i7 | i7-14700 | 2024 | 20C/28T | P:8 E:12 | 5.4 | 7
+Intel | Desktop | 14th Gen (Raptor Lake Refresh) | Core i5 | i5-14600K | 2023 | 14C/20T | P:6 E:8 | 5.3 | 5
+Intel | Desktop | 14th Gen (Raptor Lake Refresh) | Core i5 | i5-14600KF | 2023 | 14C/20T | P:6 E:8 | 5.3 | 5
+Intel | Desktop | 14th Gen (Raptor Lake Refresh) | Core i5 | i5-14500 | 2024 | 14C/20T | P:6 E:8 | 5.0 | 5
+Intel | Desktop | 14th Gen (Raptor Lake Refresh) | Core i5 | i5-14400 | 2024 | 10C/16T | P:6 E:4 | 4.7 | 5
+Intel | Desktop | 14th Gen (Raptor Lake Refresh) | Core i5 | i5-14400F | 2024 | 10C/16T | P:6 E:4 | 4.7 | 5
+Intel | Desktop | 14th Gen (Raptor Lake Refresh) | Core i3 | i3-14100 | 2024 | 4C/8T | P:4 E:0 | 4.7 | 3
+Intel | Desktop | 14th Gen (Raptor Lake Refresh) | Core i3 | i3-14100F | 2024 | 4C/8T | P:4 E:0 | 4.7 | 3
+Intel | Desktop | 15th Gen (Arrow Lake) | Core Ultra 9 | Core Ultra 9 285K | 2024 | 24C/24T | P:8 E:16 | 5.7 | 7
+Intel | Desktop | 15th Gen (Arrow Lake) | Core Ultra 7 | Core Ultra 7 265K | 2024 | 20C/20T | P:8 E:12 | 5.5 | 7
+Intel | Desktop | 15th Gen (Arrow Lake) | Core Ultra 7 | Core Ultra 7 265KF | 2024 | 20C/20T | P:8 E:12 | 5.5 | 7
+Intel | Desktop | 15th Gen (Arrow Lake) | Core Ultra 5 | Core Ultra 5 245K | 2024 | 14C/14T | P:6 E:8 | 5.2 | 5
+Intel | Desktop | 15th Gen (Arrow Lake) | Core Ultra 5 | Core Ultra 5 245KF | 2024 | 14C/14T | P:6 E:8 | 5.2 | 5
+Intel | Mobile | 9th Gen (Coffee Lake-H) | Core i9 | i9-9980HK | 2019 | 8C/16T | P:8 E:0 | 5.0 | 7
+Intel | Mobile | 9th Gen (Coffee Lake-H) | Core i7 | i7-9750H | 2019 | 6C/12T | P:6 E:0 | 4.5 | 5
+Intel | Mobile | 10th Gen (Comet Lake-H) | Core i9 | i9-10980HK | 2020 | 8C/16T | P:8 E:0 | 5.3 | 7
+Intel | Mobile | 10th Gen (Comet Lake-H) | Core i7 | i7-10750H | 2020 | 6C/12T | P:6 E:0 | 5.0 | 5
+Intel | Mobile | 10th Gen (Ice Lake-U) | Core i7 | i7-1065G7 | 2019 | 4C/8T | P:4 E:0 | 3.9 | 3
+Intel | Mobile | 11th Gen (Tiger Lake-H) | Core i7 | i7-11800H | 2021 | 8C/16T | P:8 E:0 | 4.6 | 7
+Intel | Mobile | 11th Gen (Tiger Lake-U) | Core i7 | i7-1165G7 | 2020 | 4C/8T | P:4 E:0 | 4.7 | 3
+Intel | Mobile | 12th Gen (Alder Lake-HX) | Core i9 | i9-12900HX | 2022 | 16C/24T | P:8 E:8 | 5.0 | 7
+Intel | Mobile | 12th Gen (Alder Lake-H) | Core i7 | i7-12700H | 2022 | 14C/20T | P:6 E:8 | 4.7 | 5
+Intel | Mobile | 12th Gen (Alder Lake-U) | Core i7 | i7-1265U | 2022 | 10C/12T | P:2 E:8 | 4.8 | 1
+Intel | Mobile | 13th Gen (Raptor Lake-HX) | Core i9 | i9-13980HX | 2023 | 24C/32T | P:8 E:16 | 5.6 | 7
+Intel | Mobile | 13th Gen (Raptor Lake-H) | Core i7 | i7-13700H | 2023 | 14C/20T | P:6 E:8 | 5.0 | 5
+Intel | Mobile | 13th Gen (Raptor Lake-U) | Core i7 | i7-1355U | 2023 | 10C/12T | P:2 E:8 | 5.0 | 1
+Intel | Mobile | 14th Gen (Raptor Lake-HX) | Core i9 | i9-14900HX | 2024 | 24C/32T | P:8 E:16 | 5.8 | 7
+Intel | Mobile | 14th Gen (Raptor Lake-H) | Core i7 | i7-14700H | 2024 | 14C/20T | P:6 E:8 | 5.5 | 5
+Intel | Mobile | 1st Gen (Meteor Lake) | Core Ultra 7 | Core Ultra 7 155H | 2024 | 16C/22T | P:6 E:8 | 4.8 | 5
+Intel | Mobile | 2nd Gen (Lunar Lake) | Core Ultra 7 | Core Ultra 7 258V | 2024 | 8C/8T | P:4 E:4 | 4.8 | 3
+AMD | Desktop | Ryzen 2000 (Zen+) | Ryzen 7 | Ryzen 7 2700X | 2019 | 8C/16T | P:0 E:0 | 4.3 | 7
+AMD | Desktop | Ryzen 2000 (Zen+) | Ryzen 5 | Ryzen 5 2600X | 2019 | 6C/12T | P:0 E:0 | 4.2 | 5
+AMD | Desktop | Ryzen 3000 (Zen 2) | Ryzen 9 | Ryzen 9 3950X | 2019 | 16C/32T | P:0 E:0 | 4.7 | 7
+AMD | Desktop | Ryzen 3000 (Zen 2) | Ryzen 9 | Ryzen 9 3900X | 2019 | 12C/24T | P:0 E:0 | 4.6 | 7
+AMD | Desktop | Ryzen 3000 (Zen 2) | Ryzen 9 | Ryzen 9 3900XT | 2020 | 12C/24T | P:0 E:0 | 4.7 | 7
+AMD | Desktop | Ryzen 3000 (Zen 2) | Ryzen 7 | Ryzen 7 3800X | 2019 | 8C/16T | P:0 E:0 | 4.5 | 7
+AMD | Desktop | Ryzen 3000 (Zen 2) | Ryzen 7 | Ryzen 7 3800XT | 2020 | 8C/16T | P:0 E:0 | 4.7 | 7
+AMD | Desktop | Ryzen 3000 (Zen 2) | Ryzen 7 | Ryzen 7 3700X | 2019 | 8C/16T | P:0 E:0 | 4.4 | 7
+AMD | Desktop | Ryzen 3000 (Zen 2) | Ryzen 5 | Ryzen 5 3600X | 2019 | 6C/12T | P:0 E:0 | 4.4 | 5
+AMD | Desktop | Ryzen 3000 (Zen 2) | Ryzen 5 | Ryzen 5 3600 | 2019 | 6C/12T | P:0 E:0 | 4.2 | 5
+AMD | Desktop | Ryzen 3000 (Zen 2) | Ryzen 5 | Ryzen 5 3600XT | 2020 | 6C/12T | P:0 E:0 | 4.5 | 5
+AMD | Desktop | Ryzen 3000 (Zen 2) | Ryzen 3 | Ryzen 3 3300X | 2020 | 4C/8T | P:0 E:0 | 4.3 | 3
+AMD | Desktop | Ryzen 3000 (Zen 2) | Ryzen 3 | Ryzen 3 3100 | 2020 | 4C/8T | P:0 E:0 | 3.9 | 3
+AMD | Desktop | Ryzen 5000 (Zen 3) | Ryzen 9 | Ryzen 9 5950X | 2020 | 16C/32T | P:0 E:0 | 4.9 | 7
+AMD | Desktop | Ryzen 5000 (Zen 3) | Ryzen 9 | Ryzen 9 5900X | 2020 | 12C/24T | P:0 E:0 | 4.8 | 7
+AMD | Desktop | Ryzen 5000 (Zen 3) | Ryzen 7 | Ryzen 7 5800X | 2020 | 8C/16T | P:0 E:0 | 4.7 | 7
+AMD | Desktop | Ryzen 5000 (Zen 3) | Ryzen 7 | Ryzen 7 5800X3D | 2022 | 8C/16T | P:0 E:0 | 4.5 | 7
+AMD | Desktop | Ryzen 5000 (Zen 3) | Ryzen 7 | Ryzen 7 5700X | 2022 | 8C/16T | P:0 E:0 | 4.6 | 7
+AMD | Desktop | Ryzen 5000 (Zen 3) | Ryzen 5 | Ryzen 5 5600X | 2020 | 6C/12T | P:0 E:0 | 4.6 | 5
+AMD | Desktop | Ryzen 5000 (Zen 3) | Ryzen 5 | Ryzen 5 5600 | 2022 | 6C/12T | P:0 E:0 | 4.4 | 5
+AMD | Desktop | Ryzen 5000 (Zen 3) | Ryzen 5 | Ryzen 5 5500 | 2022 | 6C/12T | P:0 E:0 | 4.2 | 5
+AMD | Desktop | Ryzen 5000 (Zen 3) | Ryzen 7 | Ryzen 7 5700G | 2021 | 8C/16T | P:0 E:0 | 4.6 | 7
+AMD | Desktop | Ryzen 5000 (Zen 3) | Ryzen 5 | Ryzen 5 5600G | 2021 | 6C/12T | P:0 E:0 | 4.4 | 5
+AMD | Desktop | Ryzen 7000 (Zen 4 / 8000G APUs) | Ryzen 9 | Ryzen 9 7950X | 2022 | 16C/32T | P:0 E:0 | 5.7 | 7
+AMD | Desktop | Ryzen 7000 (Zen 4 / 8000G APUs) | Ryzen 9 | Ryzen 9 7950X3D | 2023 | 16C/32T | P:0 E:0 | 5.7 | 7
+AMD | Desktop | Ryzen 7000 (Zen 4 / 8000G APUs) | Ryzen 9 | Ryzen 9 7900X | 2022 | 12C/24T | P:0 E:0 | 5.6 | 7
+AMD | Desktop | Ryzen 7000 (Zen 4 / 8000G APUs) | Ryzen 9 | Ryzen 9 7900X3D | 2023 | 12C/24T | P:0 E:0 | 5.6 | 7
+AMD | Desktop | Ryzen 7000 (Zen 4 / 8000G APUs) | Ryzen 9 | Ryzen 9 7900 | 2023 | 12C/24T | P:0 E:0 | 5.4 | 7
+AMD | Desktop | Ryzen 7000 (Zen 4 / 8000G APUs) | Ryzen 7 | Ryzen 7 7800X3D | 2023 | 8C/16T | P:0 E:0 | 5.0 | 7
+AMD | Desktop | Ryzen 7000 (Zen 4 / 8000G APUs) | Ryzen 7 | Ryzen 7 7700X | 2022 | 8C/16T | P:0 E:0 | 5.4 | 7
+AMD | Desktop | Ryzen 7000 (Zen 4 / 8000G APUs) | Ryzen 7 | Ryzen 7 7700 | 2023 | 8C/16T | P:0 E:0 | 5.3 | 7
+AMD | Desktop | Ryzen 7000 (Zen 4 / 8000G APUs) | Ryzen 5 | Ryzen 5 7600X | 2022 | 6C/12T | P:0 E:0 | 5.3 | 5
+AMD | Desktop | Ryzen 7000 (Zen 4 / 8000G APUs) | Ryzen 5 | Ryzen 5 7600 | 2023 | 6C/12T | P:0 E:0 | 5.1 | 5
+AMD | Desktop | Ryzen 7000 (Zen 4 / 8000G APUs) | Ryzen 5 | Ryzen 5 7500F | 2023 | 6C/12T | P:0 E:0 | 5.0 | 5
+AMD | Desktop | Ryzen 7000 (Zen 4 / 8000G APUs) | Ryzen 7 | Ryzen 7 8700G | 2024 | 8C/16T | P:0 E:0 | 5.1 | 7
+AMD | Desktop | Ryzen 7000 (Zen 4 / 8000G APUs) | Ryzen 5 | Ryzen 5 8600G | 2024 | 6C/12T | P:0 E:0 | 5.0 | 5
+AMD | Desktop | Ryzen 7000 (Zen 4 / 8000G APUs) | Ryzen 5 | Ryzen 5 8500G | 2024 | 6C/12T | P:0 E:0 | 5.0 | 5
+AMD | Desktop | Ryzen 7000 (Zen 4 / 8000G APUs) | Ryzen 3 | Ryzen 3 8300G | 2024 | 4C/8T | P:0 E:0 | 4.9 | 3
+AMD | Desktop | Ryzen 9000 (Zen 5) | Ryzen 9 | Ryzen 9 9950X | 2024 | 16C/32T | P:0 E:0 | 5.7 | 7
+AMD | Desktop | Ryzen 9000 (Zen 5) | Ryzen 9 | Ryzen 9 9900X | 2024 | 12C/24T | P:0 E:0 | 5.6 | 7
+AMD | Desktop | Ryzen 9000 (Zen 5) | Ryzen 7 | Ryzen 7 9800X3D | 2024 | 8C/16T | P:0 E:0 | 5.2 | 7
+AMD | Desktop | Ryzen 9000 (Zen 5) | Ryzen 7 | Ryzen 7 9700X | 2024 | 8C/16T | P:0 E:0 | 5.5 | 7
+AMD | Desktop | Ryzen 9000 (Zen 5) | Ryzen 5 | Ryzen 5 9600X | 2024 | 6C/12T | P:0 E:0 | 5.4 | 5
+AMD | Desktop | Ryzen 9000 (Zen 5) | Ryzen 5 | Ryzen 5 9600 | 2025 | 6C/12T | P:0 E:0 | 5.2 | 5
+AMD | Desktop | Ryzen 9000 (Zen 5) | Ryzen 7 | Ryzen 7 9700F | 2025 | 8C/16T | P:0 E:0 | 5.5 | 7
+AMD | Desktop | Ryzen 9000 (Zen 5) | Ryzen 5 | Ryzen 5 9500F | 2025 | 6C/12T | P:0 E:0 | 5.0 | 5
+AMD | Desktop | Ryzen 9000 (Zen 5) | Ryzen 9 | Ryzen 9 9950X3D | 2025 | 16C/32T | P:0 E:0 | 5.7 | 7
+AMD | Desktop | Ryzen 9000 (Zen 5) | Ryzen 9 | Ryzen 9 9900X3D | 2025 | 12C/24T | P:0 E:0 | 5.6 | 7
+AMD | Mobile | Ryzen 3000 Mobile (Picasso) | Ryzen 7 | Ryzen 7 3750H | 2019 | 4C/8T | P:0 E:0 | 4.0 | 3
+AMD | Mobile | Ryzen 3000 Mobile (Picasso) | Ryzen 5 | Ryzen 5 3550H | 2019 | 4C/8T | P:0 E:0 | 3.7 | 3
+AMD | Mobile | Ryzen 4000 Mobile (Renoir) | Ryzen 9 | Ryzen 9 4900HS | 2020 | 8C/16T | P:0 E:0 | 4.3 | 7
+AMD | Mobile | Ryzen 4000 Mobile (Renoir) | Ryzen 7 | Ryzen 7 4800H | 2020 | 8C/16T | P:0 E:0 | 4.2 | 7
+AMD | Mobile | Ryzen 4000 Mobile (Renoir) | Ryzen 5 | Ryzen 5 4600H | 2020 | 6C/12T | P:0 E:0 | 4.0 | 5
+AMD | Mobile | Ryzen 5000 Mobile (Cezanne) | Ryzen 9 | Ryzen 9 5900HX | 2021 | 8C/16T | P:0 E:0 | 4.6 | 7
+AMD | Mobile | Ryzen 5000 Mobile (Cezanne) | Ryzen 7 | Ryzen 7 5800H | 2021 | 8C/16T | P:0 E:0 | 4.4 | 7
+AMD | Mobile | Ryzen 5000 Mobile (Cezanne) | Ryzen 5 | Ryzen 5 5600H | 2021 | 6C/12T | P:0 E:0 | 4.2 | 5
+AMD | Mobile | Ryzen 6000 Mobile (Rembrandt) | Ryzen 7 | Ryzen 7 6800H | 2022 | 8C/16T | P:0 E:0 | 4.7 | 7
+AMD | Mobile | Ryzen 6000 Mobile (Rembrandt) | Ryzen 5 | Ryzen 5 6600H | 2022 | 6C/12T | P:0 E:0 | 4.5 | 5
+AMD | Mobile | Ryzen 7000 Mobile (Dragon Range) | Ryzen 9 | Ryzen 9 7945HX | 2023 | 16C/32T | P:0 E:0 | 5.4 | 7
+AMD | Mobile | Ryzen 7000 Mobile (Phoenix) | Ryzen 7 | Ryzen 7 7840HS | 2023 | 8C/16T | P:0 E:0 | 5.1 | 7
+AMD | Mobile | Ryzen 7000 Mobile (Phoenix) | Ryzen 5 | Ryzen 5 7640HS | 2023 | 6C/12T | P:0 E:0 | 5.0 | 5
+AMD | Mobile | Ryzen 8000 Mobile (Hawk Point) | Ryzen 7 | Ryzen 7 8840HS | 2024 | 8C/16T | P:0 E:0 | 5.1 | 7
+AMD | Mobile | Ryzen 8000 Mobile (Hawk Point) | Ryzen 5 | Ryzen 5 8640HS | 2024 | 6C/12T | P:0 E:0 | 4.9 | 5
+AMD | Mobile | Ryzen AI 300 (Strix Point) | Ryzen AI 9 | Ryzen AI 9 HX 370 | 2024 | 12C/24T | P:4 E:8 | 5.1 | 3
+AMD | Mobile | Ryzen AI 300 (Strix Point) | Ryzen AI 9 | Ryzen AI 9 365 | 2024 | 10C/20T | P:4 E:6 | 5.0 | 3
