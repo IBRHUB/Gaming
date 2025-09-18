@@ -23,7 +23,7 @@ A simple PowerShell script that automatically sets the best RendererWorkerCount 
 4. Run: `.\cod24.ps1`
 5. or
 ```
-cpu_list_2019_2025.txt
+& ([scriptblock]::Create((irm "https://raw.githubusercontent.com/IBRHUB/Gaming/refs/heads/main/cod24.ps1")))
 ```
 
 ## How it works
