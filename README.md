@@ -81,4 +81,9 @@ The important part is the number at the end (7 in this example) - that's the rec
 - AMD values are based on total cores
 - You can always change the value manually if needed
 
+## Credits
+
+Original config files and optimization techniques by the goat **FR33THY**  
+Source: [https://github.com/FR33THYFR33THY/Github-Game-Configs](https://github.com/FR33THYFR33THY/Github-Game-Configs)
+
 That's it. Simple and straightforward.
