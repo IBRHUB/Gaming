@@ -296,57 +296,38 @@ function Get-CPUInfo {
         # Get current CPU model
         $currentCPU = (Get-WmiObject -Class Win32_Processor).Name
         
-        # CPU Database Configuration - Try TXT first (with Recommended column)
-        $cpuDatabaseTxt = Join-Path $PSScriptRoot "cpu_list_2019_2025.txt"
-        $cpuDatabaseJson = Join-Path $PSScriptRoot "cpu_database.json"
+        # CPU Database Configuration - Download to temp and read from temp
         $cpuDatabaseTxtUrl = "https://raw.githubusercontent.com/IBRHUB/Gaming/refs/heads/main/cpu_list_2019_2025.txt"
+        $tempTxtFile = "$env:TEMP\cpu_list_2019_2025.txt"
+        $cpuDatabaseJson = Join-Path $PSScriptRoot "cpu_database.json"
         
         $cpuData = $null
         $txtLines = $null
         $databaseType = ""
         $recommendedValue = 0
         
-        # Try to load TXT database first (with Recommended column)
-        if (Test-Path $cpuDatabaseTxt) {
-            try {
-                $txtLines = Get-Content $cpuDatabaseTxt | Where-Object { 
+        # Download TXT database from GitHub to temp directory
+        Write-Host "INFO: Downloading CPU database from GitHub to temp directory..." -ForegroundColor Cyan
+        try {
+            Get-FileFromWeb -URL $cpuDatabaseTxtUrl -File $tempTxtFile
+            
+            if (Test-Path $tempTxtFile) {
+                Write-Host "INFO: Downloaded CPU database to temp directory" -ForegroundColor Green
+                
+                # Load the downloaded file from temp
+                $txtLines = Get-Content $tempTxtFile | Where-Object { 
                     $_ -match '^\w+\s+\|' -and 
                     $_ -notmatch '^Brand\s+\|' -and 
                     $_ -notmatch '^CPU LIST' -and 
                     $_ -notmatch '^Format:' 
                 }
                 $databaseType = "TXT"
-                Write-Host "INFO: Using local TXT CPU database (with Recommended values)" -ForegroundColor Green
-            } catch {
-                Write-Host "WARNING: Failed to parse local TXT database, trying download" -ForegroundColor Yellow
+                Write-Host "INFO: Using downloaded TXT CPU database from temp (with Recommended values)" -ForegroundColor Green
+            } else {
+                Write-Host "WARNING: Failed to download TXT database" -ForegroundColor Yellow
             }
-        } else {
-            # Try to download TXT database from GitHub
-            Write-Host "INFO: Local TXT database not found, downloading from GitHub..." -ForegroundColor Cyan
-            try {
-                $tempTxtFile = "$env:TEMP\cpu_list_2019_2025.txt"
-                Get-FileFromWeb -URL $cpuDatabaseTxtUrl -File $tempTxtFile
-                
-                if (Test-Path $tempTxtFile) {
-                    # Copy to script directory for future use
-                    Copy-Item $tempTxtFile $cpuDatabaseTxt -Force
-                    Write-Host "INFO: Downloaded and saved TXT database locally" -ForegroundColor Green
-                    
-                    # Load the downloaded file
-                    $txtLines = Get-Content $cpuDatabaseTxt | Where-Object { 
-                        $_ -match '^\w+\s+\|' -and 
-                        $_ -notmatch '^Brand\s+\|' -and 
-                        $_ -notmatch '^CPU LIST' -and 
-                        $_ -notmatch '^Format:' 
-                    }
-                    $databaseType = "TXT"
-                    Write-Host "INFO: Using downloaded TXT CPU database (with Recommended values)" -ForegroundColor Green
-                } else {
-                    Write-Host "WARNING: Failed to download TXT database" -ForegroundColor Yellow
-                }
-            } catch {
-                Write-Host "WARNING: Failed to download TXT database: $($_.Exception.Message)" -ForegroundColor Yellow
-            }
+        } catch {
+            Write-Host "WARNING: Failed to download TXT database: $($_.Exception.Message)" -ForegroundColor Yellow
         }
         
         # Fallback to JSON database if TXT failed or not found
