@@ -129,10 +129,8 @@ function Get-CPURecommendedRuleBased {
         [switch]$VerboseLog
     )
 
-    # ---------- Helpers ----------
     function W($msg,[ConsoleColor]$c='Gray'){ if($VerboseLog){ Write-Host $msg -ForegroundColor $c } }
 
-    # Approximate release year maps by generation/series
     $BaseYearIntel = @{
         '9' = 2019; '10' = 2020; '11' = 2021; '12' = 2021; '13' = 2022; '14' = 2023; '15' = 2024
     }
@@ -140,18 +138,16 @@ function Get-CPURecommendedRuleBased {
         'Zen+'=2019; 'Zen 2'=2019; 'Zen 3'=2020; 'Zen 4'=2022; 'Zen 5'=2024
     }
 
-    # Feature/flags patterns from name
     $FeaturePatterns = @{
         X3D = { param($n) $n -match 'X3D' }
-        KS  = { param($n) $n -match 'KS\b' }   # Intel bin
-        KF  = { param($n) $n -match 'KF\b' }   # No iGPU
+        KS  = { param($n) $n -match 'KS\b' }
+        KF  = { param($n) $n -match 'KF\b' }
         HX  = { param($n) $n -match 'HX\b' }
         U   = { param($n) $n -match '\bU\b' }
-        H   = { param($n) $n -match '\bH(?!X)\b' } # H/HS/HK
-        G   = { param($n) $n -match '\b[0-9]?G\b' } # APU suffix
+        H   = { param($n) $n -match '\bH(?!X)\b' }
+        G   = { param($n) $n -match '\b[0-9]?G\b' }
     }
 
-    # Adjustable weights
     $Cfg = @{
         Gaming = @{
             PCoreWeight=1.00; ECoreWeight=0.35; FreqFactor=1.00
@@ -190,32 +186,25 @@ function Get-CPURecommendedRuleBased {
     $threads = [int]$cpu.NumberOfLogicalProcessors
     $baseGHz = [double]$cpu.MaxClockSpeed / 1000.0
 
-    # Estimate P/E for hybrid (approximation):
-    # SMT≈2 -> P = threads - cores ; E = 2*cores - threads
     $pC = [math]::Max(0, ($threads - $cores))
     $eC = [math]::Max(0, (2*$cores - $threads))
-    if($pC -eq 0 -and $eC -eq 0){ $pC=$cores; $eC=0 } # Old/AMD classic processors
+    if($pC -eq 0 -and $eC -eq 0){ $pC=$cores; $eC=0 }
 
-    # Desktop/Mobile estimation from name
     $isMobile = ($name -match '\b(U|H|HX|HS|HK)\b' -or $name -match 'Mobile')
     $segment  = if($isMobile){'Mobile'} else {'Desktop'}
 
-    # Turbo estimation (since WMI usually gives Base)
     $turboEst = if($isMobile){ $baseGHz*1.05 } else { $baseGHz*1.10 }
 
-    # Brand/Gen estimation from name
     $brand = if($name -match 'Intel'){ 'Intel' } elseif($name -match 'AMD|Ryzen'){ 'AMD' } else { 'Unknown' }
 
-    $baseYear = (Get-Date).Year - 2  # Default
+    $baseYear = (Get-Date).Year - 2
     if($brand -eq 'Intel'){
         if($name -match '\b(9|10|11|12|13|14|15)9?0{0,1}0?[0-9]?\b' -or $name -match '\b(9th|10th|11th|12th|13th|14th|15th)\b'){
-            # Try to extract first generation number from name (flexible)
             if($name -match '\b(9|10|11|12|13|14|15)th\b'){ $g=$Matches[1] }
-            elseif($name -match '\b1(5|4|3|2)900|\b11?900|\b10?900'){ $g=$Matches[1] } # Approximation
+            elseif($name -match '\b1(5|4|3|2)900|\b11?900|\b10?900'){ $g=$Matches[1] }
         }
-        # Simpler: Capture any 9..15 preceding i3/i5/i7/i9/Core Ultra series
         if(-not $g){
-            if($name -match 'Core\s+Ultra\s+(\d)'){ $g =  (15) } # Arrow Lake Marketing
+            if($name -match 'Core\s+Ultra\s+(\d)'){ $g =  (15) }
             elseif($name -match '\b1(5|4|3|2)\d{3}K?F?S?'){ $g = $Matches[1] }
         }
         if($g){ $baseYear = $BaseYearIntel["$g"] }
@@ -244,7 +233,6 @@ function Get-CPURecommendedRuleBased {
     $isU   = & $FeaturePatterns.U   $name
     $isG   = & $FeaturePatterns.G   $name
 
-    # ---------- Score ----------
     if($CpuProfile -eq 'Gaming'){
         $c = $Cfg.Gaming
         $mix   = ($pC*$c.PCoreWeight) + ($eC*$c.ECoreWeight)
@@ -256,7 +244,6 @@ function Get-CPURecommendedRuleBased {
         if($isHX){ $score += $c.HXBonus }
         if($isG){ $score += $c.APU_Penalty }
         if($isU){ $score += $c.U_Penalty }
-        # KS/KF slight effect (binning/no iGPU doesn't usually change performance)
         if($isKS){ $score += 0.02 }
         if($isKF){ $score += 0.00 }
     } else {
@@ -293,60 +280,48 @@ function Get-CPURecommendedRuleBased {
 
 function Get-CPUInfo {
     try {
-        # Get current CPU model
         $currentCPU = (Get-WmiObject -Class Win32_Processor).Name
         
-        # CPU Database Configuration - Download to temp and read from temp
-        $cpuDatabaseTxtUrl = "https://raw.githubusercontent.com/IBRHUB/Gaming/refs/heads/main/cpu_list_2019_2025.txt"
-        $tempTxtFile = "$env:TEMP\cpu_list_2019_2025.txt"
+        $cpuDatabaseJsonUrl = "https://raw.githubusercontent.com/IBRHUB/Gaming/refs/heads/main/cpu_list_2019_2025.json"
+        $tempJsonFile = "$env:TEMP\cpu_list_2019_2025.json"
         $cpuDatabaseJson = Join-Path $PSScriptRoot "cpu_database.json"
         
         $cpuData = $null
-        $txtLines = $null
         $databaseType = ""
         $recommendedValue = 0
         
-        # Download TXT database from GitHub to temp directory
         Write-Host "INFO: Downloading CPU database from GitHub to temp directory..." -ForegroundColor Cyan
         try {
-            Get-FileFromWeb -URL $cpuDatabaseTxtUrl -File $tempTxtFile
+            Get-FileFromWeb -URL $cpuDatabaseJsonUrl -File $tempJsonFile
             
-            if (Test-Path $tempTxtFile) {
+            if (Test-Path $tempJsonFile) {
                 Write-Host "INFO: Downloaded CPU database to temp directory" -ForegroundColor Green
                 
-                # Load the downloaded file from temp
-                $txtLines = Get-Content $tempTxtFile | Where-Object { 
-                    $_ -match '^\w+\s+\|' -and 
-                    $_ -notmatch '^Brand\s+\|' -and 
-                    $_ -notmatch '^CPU LIST' -and 
-                    $_ -notmatch '^Format:' 
-                }
-                $databaseType = "TXT"
-                Write-Host "INFO: Using downloaded TXT CPU database from temp (with Recommended values)" -ForegroundColor Green
+                $jsonContent = Get-Content $tempJsonFile -Raw -Encoding UTF8
+                $cpuData = $jsonContent | ConvertFrom-Json
+                $databaseType = "JSON"
+                Write-Host "INFO: Using downloaded JSON CPU database from temp (with Recommended values)" -ForegroundColor Green
             } else {
-                Write-Host "WARNING: Failed to download TXT database" -ForegroundColor Yellow
+                Write-Host "WARNING: Failed to download JSON database" -ForegroundColor Yellow
             }
         } catch {
-            Write-Host "WARNING: Failed to download TXT database: $($_.Exception.Message)" -ForegroundColor Yellow
+            Write-Host "WARNING: Failed to download JSON database: $($_.Exception.Message)" -ForegroundColor Yellow
         }
         
-        # Fallback to JSON database if TXT failed or not found
-        if (-not $txtLines -and (Test-Path $cpuDatabaseJson)) {
+        if (-not $cpuData -and (Test-Path $cpuDatabaseJson)) {
             try {
                 $jsonContent = Get-Content $cpuDatabaseJson -Raw -Encoding UTF8
                 $cpuData = $jsonContent | ConvertFrom-Json
                 $databaseType = "JSON"
-                Write-Host "INFO: Using JSON CPU database" -ForegroundColor Green
+                Write-Host "INFO: Using local JSON CPU database" -ForegroundColor Green
             } catch {
-                Write-Host "WARNING: Failed to parse JSON database" -ForegroundColor Yellow
+                Write-Host "WARNING: Failed to parse local JSON database" -ForegroundColor Yellow
             }
         }
         
-        # If no database found, use rule-based fallback
-        if (-not $cpuData -and -not $txtLines) {
+        if (-not $cpuData) {
             Write-Host "WARNING: No CPU database found, using rule-based fallback" -ForegroundColor Yellow
             
-            # Use rule-based CPU recommendation function
             $ruleBasedResult = Get-CPURecommendedRuleBased -CpuProfile 'Gaming'
             return @{
                 Cores = $ruleBasedResult.Cores
@@ -367,51 +342,26 @@ function Get-CPUInfo {
         
 
         if ($databaseType -eq "JSON" -and $cpuData) {
-            foreach ($cpu in $cpuData.cpus) {
-                # Check if current CPU name contains this model
-                if ($currentCPU -like "*$($cpu.model)*") {
-                    $matchedCPU = $cpu.model
-                    $cpuCores = $cpu.pCores  
-                    $cpuBrand = $cpu.brand
-                    $cpuGeneration = $cpu.generation
-                    $cpuSegment = "Desktop"  
+            foreach ($cpu in $cpuData) {
+                if ($cpu.Type -eq "Header") { continue }
+                
+                if ($currentCPU -like "*$($cpu.Model)*" -or $currentCPU -like "*$($cpu.Family)*") {
+                    $matchedCPU = $cpu.Model
+                    $cpuCores = [int]($cpu."Cores/Threads" -split 'C')[0]
+                    $cpuBrand = $cpu.Brand.Trim()
+                    $cpuGeneration = $cpu."Generation/Series".Trim()
+                    $cpuSegment = $cpu.Segment.Trim()
+                    $recommendedValue = [int]$cpu.Recommended
                     break
                 }
             }
         }
         
-        elseif ($databaseType -eq "TXT" -and $txtLines) {
-            foreach ($line in $txtLines) {
-                if ($line -match '^(\w+)\s+\|\s+(\w+)\s+\|\s+(.+?)\s+\|\s+(.+?)\s+\|\s+(.+?)\s+\|\s+(\d+)\s+\|\s+(\d+)C\s+\|\s+P:(\d+)\s+E:(\d+)\s+\|\s+([\d.]+)\s+\|\s+(\d+)') {
-                    $brand = $matches[1].Trim()
-                    $segment = $matches[2].Trim()
-                    $generation = $matches[3].Trim()
-                    $family = $matches[4].Trim()
-                    $model = $matches[5].Trim()
-                    $pCores = [int]$matches[9]
-                    $recommended = [int]$matches[12]
-                    
-                    
-                    if ($currentCPU -like "*$model*" -or $currentCPU -like "*$family*") {
-                        $matchedCPU = $model
-                        $cpuCores = $pCores  # Use P-Cores
-                        $cpuBrand = $brand
-                        $cpuGeneration = $generation
-                        $cpuSegment = $segment
-                        $recommendedValue = $recommended  # Use direct recommended value
-                        break
-                    }
-                }
-            }
-        }
         
         if ($matchedCPU) {
-            # Use recommended value from database (TXT)
-            if ($databaseType -eq "TXT" -and $recommendedValue) {
-                # Use direct value from TXT database
+            if ($databaseType -eq "JSON" -and $recommendedValue) {
                 $calculationMethod = "Direct from Database"
             } else {
-                
                 $recommendedValue = [Math]::Max(1, $cpuCores - 1)
                 $calculationMethod = "P-Cores - 1"
             }
@@ -445,7 +395,6 @@ function Get-CPUInfo {
     }
 }
 
-# Main Script
 try {
     Write-Host "Call of Duty Configuration Tool     " -ForegroundColor Cyan
     Write-Host ""
@@ -516,7 +465,6 @@ try {
     Clear-Host
     Write-Host "Downloading config files..." -ForegroundColor Cyan
 
-    # Download and extract
     $downloadUrl = "https://raw.githubusercontent.com/IBRHUB/Gaming/refs/heads/main/WZBO6MW2MW3.zip"
     $tempZip = "$env:TEMP\WZBO6MW2MW3.zip"
     $tempExtract = "$env:TEMP\WZBO6MW2MW3"
@@ -527,7 +475,6 @@ try {
     Write-Host "Files ready!" -ForegroundColor Green
     Clear-Host
     
-    # Edit config files
     $configFiles = @(
         "$tempExtract\players\options.3.cod22.cst",
         "$tempExtract\players\options.4.cod23.cst",
@@ -571,7 +518,6 @@ try {
     Write-Host "Installed to $installedCount directories" -ForegroundColor Green
     Clear-Host
 
-    # User folder selection
     Write-Host "Select your User ID folder (optional):" -ForegroundColor Yellow
     $userFolder = Show-ModernFilePicker -Mode Folder
     
@@ -580,12 +526,10 @@ try {
         Write-Host "User config installed" -ForegroundColor Green
     }
 
-    # Cleanup
     Write-Host "Cleaning up..." -ForegroundColor Cyan
     Remove-Item $tempExtract -Recurse -Force -ErrorAction SilentlyContinue
     Remove-Item $tempZip -Force -ErrorAction SilentlyContinue
 
-    # Success message
     Clear-Host
     Write-Host "Configuration Complete!" -ForegroundColor Green
     Write-Host "RendererWorkerCount: $rendererWorkerCount" -ForegroundColor White
